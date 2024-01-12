@@ -1,0 +1,8 @@
+CREATE FUNCTION CalculateAge (@BirthDate DATE)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @Age INT
+    SET @Age = CONVERT(INT, DATEDIFF(YEAR, @BirthDate, GETDATE()))
+    RETURN @Age
+END;
